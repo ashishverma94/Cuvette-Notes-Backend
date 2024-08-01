@@ -3,7 +3,7 @@ export const app = express();
 import cors from "cors";
 import cookieParser from "cookie-parser";
 import dotenv from 'dotenv' ;
-import connectDB from "../utils/db.js";
+import connectDB from "./utils/db.js";
 
 dotenv.config() ;
 
@@ -19,8 +19,8 @@ app.use(
 );
 
 // ROUTES
-import noteRouter from "../routes/note.route.js";
-import groupRouter from "../routes/group.route.js";
+import noteRouter from "./routes/note.route.js";
+import groupRouter from "./routes/group.route.js";
 
 app.use("/api/v1", noteRouter);
 app.use("/api/v1", groupRouter);
