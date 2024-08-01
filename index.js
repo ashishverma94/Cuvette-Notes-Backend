@@ -29,6 +29,8 @@ app.use("/api/v1", groupRouter);
 app.get("/test", (req, res, next) => {
   res.status(200).json({ success: true, message: "API is working" });
 });
+app.get("/", (req, res) => res.send("Express on Vercel"));
+
 // UNKNOWN ROUTE
 app.all("*", (req, res, next) => {
   const err = new Error(`Route ${req.originalUrl} not found!`) ;
